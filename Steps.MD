@@ -1,9 +1,8 @@
 #THE PROCEDURE FROM START TO FINISH
 
 ####first we need to setup express hbs
-- $ npx express-generator
-- then if not setup then type
-            (-express --hbs)
+- $ npx express-generator --hbs
+
 - now the initial fils are setup... next we need to install nodemon if needed.
 
 ####settinbg the layouts

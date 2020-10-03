@@ -8,6 +8,7 @@ var userRouter = require('./routes/user');
 var adminRouter = require('./routes/admin');
 var hbs= require('express-handlebars');  //to use the handlebars partials and diff directry we need hbs.. 
 var fileUpload = require('express-fileupload');
+var db = require("./config/connection");//config connectetion
 
 var app = express();
 
@@ -24,6 +25,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 
+db.connect(err =>{
+  if(err) console.log("Connection error" + err);
+  else console.log("Connected to Db successfully ");
+}); //now conncetion will be called
 app.use('/', userRouter);
 app.use('/admin', adminRouter);
 
